@@ -1,14 +1,19 @@
-import turtle
-import random
+from random import *
 
-arrow = turtle.Turtle()
+from turtle import *
+bgcolor('dim grey')
+
+
+particle = Turtle()
+
+particle.shape('turtle')
+
+particle.pencolor('white')
 
 
 while True:
-    arrow.forward(random.randint(0,10))
+    particle.forward(randint(0,25))
 
-    arrow.left(random.randint(-359,359))
+    particle.left(randint(-359,359))
 
 turtle.mainloop()
-
-
