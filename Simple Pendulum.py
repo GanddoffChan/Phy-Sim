@@ -4,13 +4,13 @@ import math
 
 root = Tk()
 
-canvas_width = 100
-canvas_height = 100
-C = Canvas(root, width=canvas_width, height=canvas_height, background='black')
+W = 100
+H = 100
+C = Canvas(root, width=W, height=H, background='black')
 C.pack()
 
-X = int(canvas_width / 2)
-Y = int(canvas_height / 2)
+X = int(W/2)
+Y = int(H/2)
 
 t = 0
 
