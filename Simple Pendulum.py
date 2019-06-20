@@ -1,11 +1,10 @@
 from tkinter import *
-import time
-import math
+from math import *
 
 root = Tk()
 
-W = 100
-H = 100
+W = 500
+H = 500
 C = Canvas(root, width=W, height=H, background='black')
 C.pack()
 
@@ -14,19 +13,19 @@ Y = int(H/2)
 
 t = 0
 
-omega = 0.005
+omega = 0.002
 
 angle = 90
 
-theta = angle*math.pi/180
+theta = angle*pi/180
 
 if X > Y:
-    R = Y-10
+    R = 0.9*Y
 
 else:
-    R = X-10
+    R = 0.9*X
 
-r = 5
+r = 0.05*R
 k = 0.00001
 gamma = 0
 
@@ -34,19 +33,16 @@ rate = 0.0000005
 
 while True:
     C.delete("all")
-    alpha = -rate*math.sin(theta)-gamma
+    alpha = -rate*sin(theta)-gamma
     omega += alpha
     theta += omega
 
     gamma = k*omega
     
-    x = X + R*math.sin(theta)
-    y = Y + R*math.cos(theta)
+    x = X + R*sin(theta)
+    y = Y + R*cos(theta)
     C.create_line(x,y, X,Y, fill="white")
     C.create_oval(x-r,y-r, x+r,y+r, fill='white')
     C.update()
     
 root.mainloop()
-
-
-
