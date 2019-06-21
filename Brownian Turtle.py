@@ -12,9 +12,9 @@ turtle.pencolor('light green')
 
 while True:
     s = randint(0, 100)
-    x = randint(0,359)
+    x = randint(1,359)
 ##To increase the probability of moving forward.    
-    θ = (1/90)*(x**2) -4*x +360
+    θ = ((x-180)**3)/16200
     
     turtle.left(θ)
     turtle.forward(s)
