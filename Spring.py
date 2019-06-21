@@ -1,5 +1,4 @@
 from tkinter import *
-import time
 
 W = 400
 H = 900
@@ -23,7 +22,6 @@ while True:
 
     Δy = H -l -h
     a = (g +k*Δy/m)*rate
-    
     v += a
     h += v
 
