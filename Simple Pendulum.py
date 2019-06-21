@@ -13,6 +13,7 @@ O = S/2
 r = 0.05*O
 
 root = Tk()
+root.title('Simple Pendulum')
 C = Canvas(root, width=S, height=S, background='black')
 length = Scale(root, label='L', from_=.1*O,to=.9*O, length=S,
                tickinterval=O/10, orient=HORIZONTAL)
