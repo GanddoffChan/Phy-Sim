@@ -1,13 +1,14 @@
 from random import *
 from turtle import *
-bgcolor('dim grey')
 
-##These is the size of the boundary for turtle movement. 
+##Thisis the size of the boundary for turtle movement. 
 BS = 400
 
 turtle = Turtle()
 turtle.shape('turtle')
-turtle.pencolor('white')
+bgcolor('dim grey')
+turtle.color('dark green')
+turtle.pencolor('light green')
 
 while True:
     s = randint(0, 100)
