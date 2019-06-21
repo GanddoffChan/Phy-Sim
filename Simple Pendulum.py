@@ -32,8 +32,7 @@ while True:
     y = O + L*cos(θ)
     
     C.create_line(x,y, O,O, fill='white', width=2)
-    C.create_oval(x-r,y-r, x+r,y+
-                  r, fill='black', outline='white', width=2)
+    C.create_oval(x-r,y-r, x+r,y+r, fill='black', outline='white', width=2)
     C.update()
     
 root.mainloop()
