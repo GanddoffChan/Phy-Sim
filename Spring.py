@@ -38,5 +38,3 @@ while True:
     C.update()
 
 root.mainloop()    
-
-    
