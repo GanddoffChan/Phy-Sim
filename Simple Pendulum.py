@@ -7,8 +7,8 @@ r = 0.05*O
 
 root = Tk()
 C = Canvas(root, width=S, height=S, background='black')
-length = Scale(root, label='L', from_=.1*O,to=.9*O, length=S, tickinterval=50, orient=HORIZONTAL)
-damping = Scale(root, label='γ', from_=0,to=100, length=S, tickinterval=50, orient=HORIZONTAL)
+length = Scale(root, label='L', from_=.1*O,to=.9*O, length=S, tickinterval=O/10, orient=HORIZONTAL)
+damping = Scale(root, label='γ', from_=0,to=100, length=S, tickinterval=10, orient=HORIZONTAL)
 C.pack()
 length.pack()
 damping.pack()
