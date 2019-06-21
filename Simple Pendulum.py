@@ -33,7 +33,6 @@ while True:
     τ = torque.get()*10**-2
     γ = damping.get()*10**-8
 
-    
     α = g/L*sin(θ) +τ/L**2 -γ*(ω*L)**2
     ω += α
     θ += ω
