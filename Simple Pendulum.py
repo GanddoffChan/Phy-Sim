@@ -31,7 +31,7 @@ while True:
     x = O + L*sin(θ)
     y = O + L*cos(θ)
     
-    C.create_line(x,y, O,O, fill='white', width=2)
+    C.create_line(O,O, x,y, fill='white', width=2)
     C.create_oval(x-r,y-r, x+r,y+r, fill='black', outline='white', width=2)
     C.update()
     
