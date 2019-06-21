@@ -1,7 +1,14 @@
 from tkinter import *
 from math import *
 
-S = 500
+def sign(x):
+    if x > 0:
+        return(1)
+    elif x < 0:
+        return(-1)
+    return(0)
+
+S = 666
 O = S/2
 r = 0.05*O
 
@@ -17,8 +24,8 @@ damping = Scale(root, label='γ', from_=0,to=10, length=S,
                 tickinterval=1, orient=HORIZONTAL, showvalue=0)
 C.pack()
 length.pack()
-gravity.pack()
-torque.pack()
+gravity.pack() 
+torque.pack() 
 damping.pack()
 
 angle = 30
@@ -27,13 +34,15 @@ angle = 30
 
 while True:
     C.delete('all')
+    
 
     L = length.get()
     g = gravity.get()*10**-4
     τ = torque.get()*10**-2
-    γ = damping.get()*10**-8
+    γ = damping.get()*10**-7
 
-    α = g/L*sin(θ) +τ/L**2 -γ*(ω*L)**2
+    
+    α = g/L*sin(θ) +τ/L**2 -sign(ω)*γ*(ω*L)**2 
     ω += α
     θ += ω
     
