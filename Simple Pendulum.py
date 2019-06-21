@@ -1,7 +1,7 @@
 from tkinter import *
 from math import *
 
-def sign(x):
+def sgn(x):
     if x > 0:
         return(1)
     elif x < 0:
@@ -43,7 +43,7 @@ while True:
     γ = damping.get()*10**-7
 
     
-    α = g/L*sin(θ) +τ/L**2 -sign(ω)*γ*(ω*L)**2 
+    α = g/L*sin(θ) +τ/L**2 -sgn(ω)*γ*(ω*L)**2 
     ω += α
     θ += ω
     
