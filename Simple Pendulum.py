@@ -13,9 +13,9 @@ C.pack()
 length.pack()
 damping.pack()
 
-ω = 1*10**-5
 angle = 180
 θ = angle*pi/180
+ω = 1*10**-5
 g = 5*10**-5
 
 while True:
