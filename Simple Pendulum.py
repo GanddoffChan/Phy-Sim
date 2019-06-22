@@ -10,8 +10,6 @@ def sgn(x):
 
 S = 666
 O = S/2
-r = 0.05*O
-
 root = Tk()
 root.title('Simple Pendulum')
 C = Canvas(root, width=S, height=S, background='black')
@@ -35,18 +33,19 @@ angle = 30
 
 while True:
     C.delete('all')
-
+    
     L = length.get()
     g = gravity.get()*10**-4
     τ = torque.get()*10**-2
     γ = damping.get()*10**-7
- 
+
     α = g/L*sin(θ) +τ/L**2 -sgn(ω)*γ*(ω*L)**2 
     ω += α
     θ += ω
     
     x = O +L*sin(θ)
     y = O +L*cos(θ)
+    r = 0.05*O
     
     C.create_line(O,O, x,y, fill='white', width=2)
     C.create_oval(x-r,y-r, x+r,y+r, fill='black',
