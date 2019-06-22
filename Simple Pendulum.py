@@ -35,14 +35,12 @@ angle = 30
 
 while True:
     C.delete('all')
-    
 
     L = length.get()
     g = gravity.get()*10**-4
     τ = torque.get()*10**-2
     γ = damping.get()*10**-7
-
-    
+ 
     α = g/L*sin(θ) +τ/L**2 -sgn(ω)*γ*(ω*L)**2 
     ω += α
     θ += ω
