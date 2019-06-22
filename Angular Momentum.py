@@ -47,10 +47,10 @@ while True:
     l = 100
     w = 50
 
-    x1 = O +(r +w/2)*cos(θ)
-    y1 = O -(r +w/2)*sin(θ)
-    x2 = O -(r +w/2)*cos(θ)
-    y2 = O +(r +w/2)*sin(θ)
+    x1 = O +(r -w/2)*cos(θ)
+    y1 = O -(r -w/2)*sin(θ)
+    x2 = O -(r -w/2)*cos(θ)
+    y2 = O +(r -w/2)*sin(θ)
 
     xul1 = x1 +l/2*sin(θ)
     yul1 = y1 +l/2*cos(θ)
