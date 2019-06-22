@@ -35,12 +35,12 @@ while True:
     C.delete('all')
     
     r = radius.get()
-    τ = torque.get()*10**-6
+    τ = torque.get()*10**-4
     m = mass.get()
     γ = damping.get()*10**-2
 
     I = r**2*m
-    L += I*(τ -sgn(ω)*γ*(ω*r)**2)
+    L += τ -sgn(ω)*γ*(ω*r)**2
     ω = L/I
     θ += ω
     
@@ -78,4 +78,3 @@ while True:
     C.update()
     
 root.mainloop()
-
