@@ -11,7 +11,7 @@ def sgn(x):
 S = 1000
 O = S/2
 root = Tk()
-root.title('Simple Pendulum')
+root.title('Double Pendulum')
 C = Canvas(root, width=S, height=S, background='black')
 
 length1 = Scale(root, label='l1', from_=.1*O,to=.5*O,
@@ -36,13 +36,15 @@ gravity.pack()
 damping.pack()
 length1.place(bordermode=OUTSIDE, height=S, width=100, x=0, y=0)
 length2.place(bordermode=OUTSIDE, height=S, width=100, x=100, y=0)
-mass1.place(bordermode=OUTSIDE, height=S, width=100, x=1920-200, y=0)
-mass2.place(bordermode=OUTSIDE, height=S, width=100, x=1920-100, y=0)
-gravity.place(bordermode=OUTSIDE, height=S, width=100, x=1920-300, y=0)
 damping.place(bordermode=OUTSIDE, height=S, width=100, x=200, y=0)
+gravity.place(bordermode=OUTSIDE, height=S, width=150, x=1920-450, y=0)
+mass1.place(bordermode=OUTSIDE, height=S, width=150, x=1920-300, y=0)
+mass2.place(bordermode=OUTSIDE, height=S, width=150, x=1920-150, y=0)
 
-angle1 = 30
-angle2 = 90
+
+
+angle1 = 180
+angle2 = 18
 θ1 = angle1*pi/180
 θ2 = angle2*pi/180
 ω1 = 0
@@ -52,8 +54,8 @@ angle2 = 90
 while True:
     C.delete('all')
     
-    g = gravity.get()*10**-4
-    γ = damping.get()*10**-1
+    g = gravity.get()*10**-3
+    γ = damping.get()
     
     l1 = length1.get()
     m1 = mass1.get()
@@ -65,8 +67,8 @@ while True:
     N2 = 2*sin(θ1-θ2)*(ω1**2*l1*(m1+m2)-g*(m1+m2)*cos(θ1)+ω2**2*l2*m2*cos(θ1-θ2))
     D2 = l2*(2*m1+m2-m2*cos(2*θ1-2*θ2))
     
-    α1 = N1/D1 -sgn(ω1)*γ*ω1**2
-    α2 = N2/D2 -sgn(ω2)*γ*ω2**2
+    α1 = N1/D1 -sgn(ω1)*γ*ω1**2/m1/l1
+    α2 = N2/D2 -sgn(ω2)*γ*ω2**2/m2/l1
     ω1 += α1
     ω2 += α2
     θ1 += ω1
